@@ -13,25 +13,35 @@ public class Ejemplos {
 	public static Scanner sc = new Scanner(System.in);
 
 	/* Declaro un array tipo String  5X3*/
-	public static String[][] arrayPelicula = { 		
-                        { "E.T" + "Sharknado" + "Godzilla" },//primera fila
-                        { "8" + "3" + "9" },//segunda fila
-                        { "5" + "8" + "7" },//tercera fila
-                        { "10" + "9" + "6" },//cuarta fila
-                        { "4" + "7" + "8" },//quinta fila
+	public static String[][] arrayPeliculas = { 		
+                        { "E.T " + "Sharknado " + " Godzilla " },//primera fila
+                        { "8      " + " 3        " + " 9" },//segunda fila
+                        { "5      " + " 8        " + " 7 " },//tercera fila
+                        { "10     " + " 9        " + " 6 " },//cuarta fila
+                        { "4      " + " 7        " + " 8 " },//quinta fila
 			};
 			
 
 	public static String stringIntroducido; /* Variable para recoger el valor introducido por el usuario */
 	public static int esNumeroEntero;
 	public static int opcionSeleccionada; /* variable para mostrar que el valor introducido es un número */
-
-	
+        public static double numeroDouble; /*Variable para obtener valores doubles dentro de los métodos*/
+	public static int numeroEntero; /*Variable para obtener valores enteros dentro de los métodos*/
 	
 	public static void main(String[] args) {
-
-                double numeroDouble=pideDouble("Introduce un valor double: ");
+               
+                numeroEntero=pideEntero();
+                System.out.println(numeroEntero);
+                numeroDouble=pideDouble("Introduce un valor double: ");
                 System.out.println(numeroDouble);
+                numeroDouble=pideDoubleEntre(2.5,2.6);
+                System.out.println(numeroDouble);
+                numeroEntero=pideEnteroEntre(0,4);
+                System.out.println(numeroEntero);
+                mostrarInfoPeliculas(arrayPeliculas);
+                
+                
+                
                 
 		/* Con un do-while mostramos el menú hasta que se introduzca un 0 */
 		do {
@@ -95,13 +105,13 @@ public class Ejemplos {
 	public static int pideEntero() {
 		boolean esNumero = false;
 		do {
-			System.out.println("¿Qué opción de las del menú quieres realizar?: ");
+			System.out.println("Introduce un número entero: ");
 			stringIntroducido = sc.nextLine();
                         //Usamos la función creada isNum para evaluar el valor introducido
 			if (isNum(stringIntroducido)) {
 				esNumero = true; // Si es número dejamos de pedir el valor
 			}else {
-				System.out.println("El valor introducido no es un número. Introduce por favor una opción válida.");
+				System.out.println("El valor introducido no es un número entero. Introduce por favor un número válido.");
 			}
 		} while (esNumero != true);
 
@@ -117,7 +127,7 @@ public class Ejemplos {
 	public static boolean isNum(String strNum) {
 		boolean respuesta = true;
 		try {
-			Integer.parseInt(strNum);// Si es posible parsearlo por lo que el String es un número
+			Integer.parseInt(strNum);// Si es posible parsearlo el String es un número
 		} catch (NumberFormatException e) {
 			respuesta = false;
 		}
@@ -158,4 +168,74 @@ public class Ejemplos {
 		}
 		return respuesta;
 	}  
+        
+        /*pideDoubleEntre(double valor1, double valor2): 
+        pide un valor double situado entre dos valores. 
+        Si no se indica un valor correcto se vuelve a pedir. 
+        Retorna el valor double indicado por el usuario.*/
+        
+        public static double pideDoubleEntre(double valor1, double valor2){
+            boolean contieneDouble = false;
+            do {
+                //Pido un valor que sea double
+                numeroDouble=pideDouble("Introduce un valor double comprendido entre:  " + valor1 + " y " + valor2);
+                //cuando obtenga un double valido, lo evaluó
+                    if ((numeroDouble>valor1) && (numeroDouble < valor2)) {//Solo si es mayor que valor1 y menor que valor2 estará comprendido
+				contieneDouble = true; // Si es un numero que esta contenido dejamos de pedir el valor
+			}else {
+				System.out.println("El valor introducido no es un double valido. Introduce un valor entero comprendido entre:  " + valor1 + " y " + valor2 );
+			}
+		} while (contieneDouble != true);
+            return numeroDouble;
+            
+        }
+        
+        /*pideEnteroEntre(int valor1, int valor2) :
+        pide un valor entero situado entre dos valores. 
+        Si no se indica un valor correcto se vuelve a pedir. 
+        Retorna el valor int indicado por el usuario.*/    
+        
+          public static int pideEnteroEntre(int valor1, int valor2){
+            boolean contieneInt = false;
+            do {
+                //Pido un valor que sea entero
+                System.out.println("Introduce un valor entero comprendido entre:  " + valor1 + " y " + valor2);
+                stringIntroducido = sc.nextLine();
+                       //Usamos la función creada isNum para evaluar que el valor introducido sea un entero
+			if (isNum(stringIntroducido)) {
+                                //cuando obtenga un int valido, lo parseo y lo evaluó
+                                numeroEntero= Integer.parseInt(stringIntroducido);
+                                if ((numeroEntero>valor1) && (numeroEntero < valor2)) {//Solo si es mayor que valor1 y menor que valor2 estará comprendido
+				contieneInt = true; // Si es un numero que esta contenido dejamos de pedir el valor
+                                }else {
+                                        System.out.println("El valor introducido no es un entero valido. Introduce un valor entero comprendido entre:  " + valor1 + " y " + valor2 );
+                                }
+			}else {
+				System.out.println("El valor introducido no es un número entero. Introduce por favor una valor válido.");
+			}               
+		} while (contieneInt != true);
+            return numeroEntero;
+            
+        }
+          
+          
+        /*mostrarInfoPeliculas (String[][] puntuaciones) : 
+          recibe el array de puntuaciones y lo muestra.*/
+        public static void mostrarInfoPeliculas(String[][] puntuaciones) {
+		System.out.println("===============================================");
+		System.out.println("Array de películas y sus puntuaciones:");
+		
+		for (int i = 0; i < puntuaciones.length; i++) {// puntuaciones.length nos proporciona el número de filas (5),
+			for (int j = 0; j < puntuaciones[i].length; j++) {//puntuaciones[i].length, nos proporciona el número de elementos en cada fila.
+			   System.out.print(puntuaciones[i][j] + " ");
+			}
+			System.out.println();
+		}
+                System.out.println();
+	}
+        
+        
+        
+       
+        
 }
