@@ -14,11 +14,11 @@ public class Ejemplos {
 
 	/* Declaro un array tipo String  5X3*/
 	public static String[][] arrayPeliculas = { 		
-                        { "E.T " + "Sharknado " + " Godzilla " },//primera fila
-                        { "8      " + " 3        " + " 9" },//segunda fila
-                        { "5      " + " 8        " + " 7 " },//tercera fila
-                        { "10     " + " 9        " + " 6 " },//cuarta fila
-                        { "4      " + " 7        " + " 8 " },//quinta fila
+                        { "E.T ", "Sharknado ", " Godzilla " },//primera fila
+                        { "8","       3  ","          9  "},//segunda fila
+                        { "5","       8","            7"},//tercera fila
+                        { "10","      9","            6"},//cuarta fila
+                        { "4","       7","            8" },//quinta fila
 			};
 			
 
