@@ -15,10 +15,10 @@ public class Ejemplos {
 	/* Declaro un array tipo String  5X3*/
 	public static String[][] arrayPeliculas = { 		
                         { "E.T ", "Sharknado ", " Godzilla " },//primera fila
-                        { "8    ","3           ","9  "},//segunda fila
-                        { "5    ","8           ","7"},//tercera fila
-                        { "10   ","9           ","6"},//cuarta fila
-                        { "4    ","7           ","8" },//quinta fila
+                        { "8    ","3           ","9         "},//segunda fila
+                        { "5    ","8           ","7         "},//tercera fila
+                        { "10   ","9           ","6         "},//cuarta fila
+                        { "4    ","7           ","8         " },//quinta fila
 			};
 			
 
@@ -29,6 +29,7 @@ public class Ejemplos {
 	public static int numeroEntero; /*Variable para obtener valores enteros dentro de los métodos*/
 	
 	public static void main(String[] args) {
+                
                
                 numeroEntero=pideEntero();
                 System.out.println(numeroEntero);
@@ -39,8 +40,10 @@ public class Ejemplos {
                 numeroEntero=pideEnteroEntre(0,4);
                 System.out.println(numeroEntero);
                 mostrarInfoPeliculas(arrayPeliculas);
-                
-                
+                modificaNombrePelicula(arrayPeliculas);
+                modificaPuntuacionPelicula (arrayPeliculas);
+                mostrarPuntuacionesPelicula(arrayPeliculas);
+               
                 
                 
 		/* Con un do-while mostramos el menú hasta que se introduzca un 0 */
@@ -234,8 +237,110 @@ public class Ejemplos {
                 System.out.println();
 	}
         
-        
-        
+        /*modificaNombrePelicula (String[][] puntuaciones) : 
+        modifica el nombre de una película según su posición en el array.*/
+        public static void modificaNombrePelicula(String[][] puntuaciones) {
+            int posicion_i;
+            int posicion_j;
+            boolean salir=false;
+            System.out.println("===============================================");
+            
+            do{
+                //Pido un valor que sea entero
+                    System.out.println("Introduce la posición \"i \" de la película que deseas modificar:");
+                    posicion_i=pideEnteroEntre(-1,1);//Los nombres de peliculas solo estan en la posición i =0, así que es el único valor válido que acepta.
+                    System.out.println("Introduce la posición \"j \" de la película que deseas modificar:");
+                    posicion_j=pideEnteroEntre(-1,3);//Solo puedo modificar 3 posiciones de la 0 a la 2
+                    System.out.println("El nombre de la película que quieres modificar es: " + puntuaciones[posicion_i] [posicion_j]+ ". Escribe SI, si es correcto." );
+                    stringIntroducido= sc.nextLine();
+                    if(stringIntroducido.equalsIgnoreCase("si")){
+                         String nombreAnterior=puntuaciones[posicion_i][posicion_j];//guardo el nombre que voy a borrar
+                         System.out.println("¿Cuál es el nombre nuevo de la película?:");
+                         stringIntroducido= sc.nextLine();
+                         puntuaciones[posicion_i][posicion_j]=stringIntroducido;//guardo el nombre de la nueva pelicula
+                         System.out.println("Se ha cambiado el nombre de la pelicula :" + nombreAnterior + " por la película: " + stringIntroducido );
+                         mostrarInfoPeliculas(puntuaciones);
+                         salir=true;
+                    }          
+            }while(salir!=true);                     
+           System.out.println();
+	}
        
+        /*modificaPuntuacionPelicula (String[][] puntuaciones) : 
+        modifica una puntuación de una película según su posición en el array.
+        */
+         public static void modificaPuntuacionPelicula(String[][] puntuaciones) {
+            int posicion_i;
+            int posicion_j;
+            boolean salir=false;
+            boolean contieneInt = false;
+            System.out.println("===============================================");
+            
+            do{
+                //Pido un valor que sea entero
+                    System.out.println("Introduce la posición \"i \" de la puntuación que deseas modificar:");
+                    /*Los valores de las puntuaciones de peliculas estan 
+                    entre la fila 1 y la fila 5 que se corresponden con la posicón i=1 y i=4, así que son los únicos valor válidos que se acepta.*/
+                    posicion_i=pideEnteroEntre(0,5);
+                    System.out.println("Introduce la posición \"j \" de la película que deseas modificar:");
+                    /*Los valores de las puntuaciones de peliculas estan 
+                    entre la columna 1 y 3 que se corresponden con la posicón i=0 y i=2, así que son los únicos valor válidos que se acepta.*/
+                    posicion_j=pideEnteroEntre(-1,3);
+                    System.out.println("El valor de la puntuación de la película que quieres modificar es: " + puntuaciones[posicion_i] [posicion_j]+ ". Escribe SI, si es correcto." );
+                    stringIntroducido= sc.nextLine();
+                    if(stringIntroducido.equalsIgnoreCase("si"))
+                         do{
+                             String puntuacionAnterior=puntuaciones[posicion_i][posicion_j];//guardo el valor que voy a borrar
+                             System.out.println("¿Cuál es el valor nuevo de la puntuación de la película?:");
+                            stringIntroducido= sc.nextLine();
+                            //Verificamos que es un número
+                               if (isNum(stringIntroducido)) {
+                                      //cuando obtenga un int valido, lo guardo en la posicion
+                                      puntuaciones[posicion_i][posicion_j]=stringIntroducido+"           " ;//guardo el nombre de la nueva puntuación
+                                      System.out.println("Se ha cambiado el valor de la puntuación de la pelicula :" + puntuacionAnterior + " por el valor: " + stringIntroducido );
+                                      mostrarInfoPeliculas(puntuaciones);
+                                      salir=true;
+                                      contieneInt=true;
+                              }else {
+                                      System.out.println("El valor introducido no es un número entero. Introduce por favor una valor válido.");
+                             }   
+                         }while(contieneInt !=true);    
+            }while(salir!=true);    
+            
+           System.out.println();
+	}
+         
         
+        /*mostrarPuntuacionesPelicula (String[][] puntuaciones) :
+         muestra las puntuaciones de una película en concreto seleccionada según su posición en el array.
+         */ 
+          public static void mostrarPuntuacionesPelicula(String[][] puntuaciones) {
+            int posicion_i;
+            int posicion_j;
+            boolean salir=false;
+            System.out.println("===============================================");
+            
+            do{
+                //Pido un valor que sea entero
+                    System.out.println("Introduce la posición \"i \" de la película cuyos valores deseas mostrar:");
+                    posicion_i=pideEnteroEntre(-1,1);//Los nombres de peliculas solo estan en la posición i =0, así que es el único valor válido que acepta.
+                    System.out.println("Introduce la posición \"j \" de la película cuyos valores deseas mostrar:");
+                    posicion_j=pideEnteroEntre(-1,3);//Solo hay 3 columnas, que corresponden con las posiciones de la 0 a la 2
+                    System.out.println("El nombre de la película cuyas puntuaciones quieres mostrar son: " + puntuaciones[posicion_i] [posicion_j]+ ". Escribe SI, si es correcto." );
+                    stringIntroducido= sc.nextLine();
+                    if(stringIntroducido.equalsIgnoreCase("si")){
+                        System.out.print("Las puntuaciones de la pelicula " + puntuaciones[posicion_i] [posicion_j] +" son: ");
+                        //El valor de la columna es decir j será el mismo siempre
+                        //i empieza en 1 porque la posición 0 corresponde al nombre de la película
+                        for (int i = 1; i < puntuaciones.length; i++) {//puntuaciones[i].length, nos proporciona el número de elementos en cada fila.
+                            System.out.print(puntuaciones[i][posicion_j]);
+			}
+			System.out.println();
+                        salir=true;
+                    }          
+            }while(salir!=true);                     
+           System.out.println();
+           sc.close();
+	}
+         
 }
