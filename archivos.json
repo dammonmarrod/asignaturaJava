@@ -1,9 +1,0 @@
-{
-  "teams":
-  [
-    {"0":{"code":"USD","alphaCode":"USD","numericCode":"840","name":"U.S. Dollar","rate":1.1341565506144,"date":"Wed, 17 Nov 2021 11:55:02 GMT","inverseRate":0.88171249326939},
-     "1":{"code":"GBP","alphaCode":"GBP","numericCode":"826","name":"U.K. Pound Sterling","rate":0.84371837974683,"date":"Wed, 17 Nov 2021 11:55:02 GMT","inverseRate":1.1852296026786},
-     "2":{"code":"CAD","alphaCode":"CAD","numericCode":"124","name":"Canadian Dollar","rate":1.4263610676466,"date":"Wed, 17 Nov 2021 11:55:02 GMT","inverseRate":0.70108475524357},
-    }
-  ]
-}
