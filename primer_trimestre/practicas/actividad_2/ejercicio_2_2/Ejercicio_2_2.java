@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package probarborrar;
+package actividad02_0485;
 
 import java.util.Scanner;
 
-public class Ejemplos {
+public class Ejercicio02 {
 
 	/* Declaro un Scanner para leer desde teclado */
 	public static Scanner sc = new Scanner(System.in);
@@ -30,8 +25,8 @@ public class Ejemplos {
 	
 	public static void main(String[] args) {
                 
-               
-                numeroEntero=pideEntero();
+                //Funcionamiento de los métodos de forma independiente
+                /* numeroEntero=pideEntero();
                 System.out.println(numeroEntero);
                 numeroDouble=pideDouble("Introduce un valor double: ");
                 System.out.println(numeroDouble);
@@ -43,7 +38,7 @@ public class Ejemplos {
                 modificaNombrePelicula(arrayPeliculas);
                 modificaPuntuacionPelicula (arrayPeliculas);
                 mostrarPuntuacionesPelicula(arrayPeliculas);
-               
+                */
                 
                 
 		/* Con un do-while mostramos el menú hasta que se introduzca un 0 */
@@ -67,33 +62,29 @@ public class Ejemplos {
 			switch (opcionSeleccionada) {
 
 			case 1:
-				/*Mostrar el nombre y puntuaciones de todas las películas*/
-				//mostrarArray(arrayPelicula);
+				mostrarInfoPeliculas(arrayPeliculas);
 				break;
 
 			case 2:
-                                //Modificar el nombre de la pelicula segun su posición en el array
+                                modificaNombrePelicula(arrayPeliculas);
+                                 mostrarInfoPeliculas(arrayPeliculas);
 				break;
 
 			case 3:
-				/*Modificar una puntuación de una película 
-				 * según su posición en el array */
-				//modificaPuntuacionPelicula(arrayPelicula);
+				modificaPuntuacionPelicula(arrayPeliculas);
+                                mostrarInfoPeliculas(arrayPeliculas);
 				break;
 
 			case 4:
-				/*Mostrar las puntuaciones de una película en concreto seleccionada 
-				 * según su posición en el array.*/
-				//mostrarPuntuacionesPelicula(arrayPelicula);
+				mostrarPuntuacionesPelicula(arrayPeliculas);
+                                mostrarInfoPeliculas(arrayPeliculas);
 				break;
 			}
 
-			/*
-			 * Si el usuario introduce un 0, se ha de mostrar un mensaje de despedida y
-			 * finalizar el programa
-			 */
+			/* Si el usuario introduce un 0, se ha de mostrar un mensaje de despedida y
+			 * finalizar el programa*/
 		} while (opcionSeleccionada != 0);
-
+                System.out.println("!Gracias por participar¡.");	
 	}
 
 	
@@ -340,7 +331,6 @@ public class Ejemplos {
                     }          
             }while(salir!=true);                     
            System.out.println();
-           sc.close();
 	}
          
 }
