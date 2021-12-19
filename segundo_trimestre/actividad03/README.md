@@ -26,12 +26,18 @@ El programa solo debe finalizar cuando el usuario indique que no quiere realizar
 ```
 
 
-##### 1.3.	En el package actividad03_0485.ejercicio01.operaciones crea y programa Valores.java :
+##### En el package actividad03_0485.ejercicio01.operaciones crea y programa Valores.java :
 ```
 Con las funciones:
 muestraPi: que simplemente muestre por consola el valor PI de la clase Math
 muestraValorAleatorio: que pida un número mediante pideEntero y muestre por consola un número aleatorio entre 0 y el número introducido.
 ```
 
+##### En el package actividad03_0485.ejercicio01.operaciones.algebraicas  crea y programa Operaciones.java  :
+```
+Con las funciones:
+muestraRaizCuadrada(): pida un número con decimales mediante pideDouble , retorne el resultado de su raíz cuadrada y posteriormente se muestre por consola.
+calculaPotencia(double,double) que muestre el resultado de elevar el primer número al segundo utilizando la función pow de la clase Math. 
+```
 
 ### Dentro del package actividad03_0485.ejercicio02 define los siguientes packages y clases: 📋
