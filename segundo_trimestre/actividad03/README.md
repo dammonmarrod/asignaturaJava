@@ -63,7 +63,9 @@ Añade el código que muestre por consola un  menú con las siguientes opciones 
 Teniendo presente que si no existe una carpeta de nombre “archivos” ubicada en la carpeta del proyecto, se cree de manera que quedará en la misma carpeta que las carpetas src  y bin:
 ```
 
-####### Método nuevoArchivo():
+##### Método nuevoArchivo():
 ```
-Debe llamar a una función que pida un nombre de archivo al usuario y cree un archivo con el nombre indicado dentro de la carpeta de nombre “archivos” ubicada en la carpeta del proyecto, y que rellene el archivo con un texto introducido por el usuario.
+Debe llamar a una función que pida un nombre de archivo al usuario 
+y cree un archivo con el nombre indicado dentro de la carpeta de nombre “archivos” ubicada en la carpeta del proyecto, 
+y que rellene el archivo con un texto introducido por el usuario.
 ```
