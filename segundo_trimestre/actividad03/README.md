@@ -33,11 +33,19 @@ muestraPi: que simplemente muestre por consola el valor PI de la clase Math
 muestraValorAleatorio: que pida un número mediante pideEntero y muestre por consola un número aleatorio entre 0 y el número introducido.
 ```
 
-##### En el package actividad03_0485.ejercicio01.operaciones.algebraicas  crea y programa Operaciones.java  :
+##### En el package actividad03_0485.ejercicio01.operaciones.algebraicas crea y programa Operaciones.java  :
 ```
 Con las funciones:
 muestraRaizCuadrada(): pida un número con decimales mediante pideDouble , retorne el resultado de su raíz cuadrada y posteriormente se muestre por consola.
 calculaPotencia(double,double) que muestre el resultado de elevar el primer número al segundo utilizando la función pow de la clase Math. 
+```
+
+
+##### En el package actividad03_0485.ejercicio01.operaciones.geometricas  crea y programa Operaciones.java :
+```
+Con las funciones:
+muestraSeno: que reciba un número con decimales por parámetro y muestre su seno.
+muestraCoseno: que reciba un número con decimales por parámetro,  retorne su coseno y se muestre por consola.
 ```
 
 ### Dentro del package actividad03_0485.ejercicio02 define los siguientes packages y clases: 📋
