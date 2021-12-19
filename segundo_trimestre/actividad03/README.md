@@ -25,4 +25,13 @@ Ten en cuenta que se debe pedir al usuario el número de función a ejecutar med
 El programa solo debe finalizar cuando el usuario indique que no quiere realizar ninguna otra operación.
 ```
 
+
+##### 1.3.	En el package actividad03_0485.ejercicio01.operaciones crea y programa Valores.java :
+```
+Con las funciones:
+muestraPi: que simplemente muestre por consola el valor PI de la clase Math
+muestraValorAleatorio: que pida un número mediante pideEntero y muestre por consola un número aleatorio entre 0 y el número introducido.
+```
+
+
 ### Dentro del package actividad03_0485.ejercicio02 define los siguientes packages y clases: 📋
