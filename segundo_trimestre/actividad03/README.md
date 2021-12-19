@@ -49,3 +49,21 @@ muestraCoseno: que reciba un número con decimales por parámetro,  retorne su c
 ```
 
 ### Dentro del package actividad03_0485.ejercicio02 define los siguientes packages y clases: 📋
+
+##### Crea y programa Ejercicio01.java :
+```
+Añade el código que muestre por consola un  menú con las siguientes opciones (y programa cada opción en una función aparte)  
+  1. Nuevo Archivo.
+  2. Listar Archivos.
+  3. Muestra un Archivo.
+  4. Borrar un Archivo.
+  5. Renombrar un Archivo.
+  6. Reemplzar carateres de un Archivo.
+  7. Salir.
+Teniendo presente que si no existe una carpeta de nombre “archivos” ubicada en la carpeta del proyecto, se cree de manera que quedará en la misma carpeta que las carpetas src  y bin:
+```
+
+####### Método nuevoArchivo():
+```
+Debe llamar a una función que pida un nombre de archivo al usuario y cree un archivo con el nombre indicado dentro de la carpeta de nombre “archivos” ubicada en la carpeta del proyecto, y que rellene el archivo con un texto introducido por el usuario.
+```
