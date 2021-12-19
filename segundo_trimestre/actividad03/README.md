@@ -69,3 +69,44 @@ Debe llamar a una función que pida un nombre de archivo al usuario
 y cree un archivo con el nombre indicado dentro de la carpeta de nombre “archivos” ubicada en la carpeta del proyecto, 
 y que rellene el archivo con un texto introducido por el usuario.
 ```
+
+##### Método listarArchivos():
+```
+Debe llamar a una función que muestre los nombres de archivos (sin carpetas) dentro de la carpeta “archivos” 
+numerados: ej: 1-Archivo1.txt  2-Archivp2.txt .. 
+y retorne un array con las rutas de los archivos. 
+```
+
+##### Método muestraUnArchivo():
+```
+Debe de llamar a ListarArchivos para mostrar los archivos disponibles 
+y permitir al usuario elegir qué documento quiere ver según su número 
+y mostrar el contenido del documento por consola.
+```
+
+##### Método borrarUnArchivo():
+```
+Debe llamar a una función que muestre los archivos dentro de la carpeta “archivos” numerados 
+y permitir al usuario elegir qué documento quiere borrar según su número.
+```
+
+##### Método renombrarUnArchivo():
+```
+Debe mostrar los archivos dentro de la carpeta “archivos” numerados 
+y permitir al usuario elegir qué documento quiere renombrar según su número. 
+A continuación le pregunte el nuevo nombre y lo renombre si es válido. 
+Si es un nombre inválido se debe mostrar un mensaje por consola al usuario y volver a ejecutar el menú.
+```
+
+##### Método reemplazarCaracteresArchivo();:
+```
+Debe de llamar a ListarArchivos para permitir al usuario elegir qué documento se quiere modificar según su número 
+y a continuación pida qué carácter se quiere reemplazar y por qué nuevo carácter. 
+Si el documento no existe o es inválido, se debe mostrar un mensaje por consola al usuario y volver a ejecutar el menú. Es preferible el uso de RandomAccessFile.
+```
+##### Método salir:
+```
+Debe terminar el programa. 
+Si el usuario selecciona una opción no contemplada se tiene que volver a mostrar el menú.
+```
+
