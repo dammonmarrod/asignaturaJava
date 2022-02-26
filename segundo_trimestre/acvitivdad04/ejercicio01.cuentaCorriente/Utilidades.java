@@ -32,7 +32,13 @@ public class Utilidades {
             valorIntroducidoPregunta=sc.nextLine();
             if(isNumericInt(valorIntroducidoPregunta)){//Si es número devolverá true
                 valor=Integer.parseInt(valorIntroducidoPregunta);
-                esNumero=true;
+                if(valor <0){
+                    System.out.println("Solo son válidos números positivos.");
+                }else{
+                     esNumero=true;
+                } 
+            }else{
+                System.out.println("Solo son válidos números enteros.");
             }
         }while(esNumero != true);
         return valor;
@@ -64,7 +70,13 @@ public class Utilidades {
             valorIntroducidoPregunta=sc.nextLine();
             if(isNumericDouble(valorIntroducidoPregunta)){//Si es número devolverá true
                 valor=Double.parseDouble(valorIntroducidoPregunta);
-                esNumero=true;
+                if(valor <0){
+                    System.out.println("Solo son válidos números positivos.");
+                }else{
+                     esNumero=true;
+                }  
+            }else{
+                System.out.println("Solo son válidos números.");
             }
         }while(esNumero != true);
         return valor;
