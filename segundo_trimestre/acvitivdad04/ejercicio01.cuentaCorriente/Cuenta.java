@@ -44,6 +44,8 @@ public class Cuenta {
     }
     
             
-    
-    
+    //Sobreescribimos el toString para mostrar la información de las cuentas
+    public String toString() {
+        return "Numero de cuenta: " + numeroCuenta + ", nombre del titular: " + nombreTitular + " , saldo de la cuenta: " + saldo;
+    }
 }
